@@ -7,7 +7,6 @@ import "fhevm/lib/TFHE.sol";
 import "./Permutation.sol";
 
 contract MockedPermutation is Permutation {
-
     uint16[] mockedArr;
 
     constructor(uint16[] memory mockedArr_) {
@@ -22,5 +21,4 @@ contract MockedPermutation is Permutation {
         }
         return arr;
     }
-
 }
