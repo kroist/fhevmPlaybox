@@ -23,7 +23,9 @@ export const createTransaction = async <A extends [...{ [I in keyof A]-?: A[I] |
   method: TypedContractMethod<A>,
   ...params: A
 ) => {
-  const gasLimit = await method.estimateGas(...params);
-  const updatedParams: ContractMethodArgs<A> = [...params, { gasLimit: Math.round(+gasLimit.toString() * 1.2) }];
+  // const gasLimit = await method.estimateGas(...params);
+  // console.log(gasLimit);
+  // const updatedParams: ContractMethodArgs<A> = [...params, { gasLimit: Math.round(+gasLimit.toString() * 1.2) }];
+  const updatedParams: ContractMethodArgs<A> = [...params, { gasLimit: Math.round(+4000000) }];
   return method(...updatedParams);
 };
